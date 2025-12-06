@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Título Projeto Web</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+    <header class="header">
+        <h1>Teste 1</h1>
+
+        <div class="header-actions">
+            <button id="btn-novo-board">+ Novo Quadro</button>
+            <button id="btn-exportar">Exportar JSON</button>
+
+            <button id="btn-importar">Importar JSON</button>
+            <input type="file" id="input-importar" accept="application/json" hidden>
+        </div>
+    </header>
+
+    <main>
+        <div id="boards-container" class="boards-container"></div>
+    </main>
+
+    <!-- Modal Criar/Editar quadro -->
+    <div id="modal-board" class="modal hidden">
+        <div class="modal-content">
+            <h2 id="modal-board-title">Novo Quadro</h2>
+            <input type="text" id="board-name" placeholder="Nome do quadro...">
+
+            <div class="modal-actions">
+                <button id="btn-salvar-board">Salvar</button>
+                <button id="btn-cancelar-board">Cancelar</button>
+            </div>
+        </div>
+    </div>
+
+    <!-- Modal Criar/Editar cartão -->
+    <div id="modal-card" class="modal hidden">
+        <div class="modal-content">
+            <h2 id="modal-card-title">Novo Cartão</h2>
+
+            <input type="text" id="card-title" placeholder="Título do cartão...">
+            <textarea id="card-desc" placeholder="Descrição"></textarea>
+
+            <div class="modal-actions">
+                <button id="btn-salvar-card">Salvar</button>
+                <button id="btn-cancelar-card">Cancelar</button>
+            </div>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
