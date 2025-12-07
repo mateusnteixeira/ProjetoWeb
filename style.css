@@ -9,6 +9,8 @@ body {
     background: #f2f2f2;
 }
 
+/* HEADER */
+
 .header {
     background: #1e1e1e;
     color: white;
@@ -16,6 +18,10 @@ body {
     display: flex;
     align-items: center;
     justify-content: space-between;
+    flex-wrap: wrap;
+}
+.header h1{
+    font-size: 24px; 
 }
 
 .header-actions button {
@@ -26,28 +32,43 @@ body {
     color: white;
     border-radius: 4px;
     cursor: pointer;
+    transition: 0.2s;
 }
 
 .header-actions button:hover {
     background: #45a049;
 }
 
+/* CONTEINER DOS QUADROS */
+
 .boards-container {
     display: flex;
     flex-wrap: wrap;
-    align-items: flex-start;
+    justify-content: center;
     gap: 20px;
     padding: 20px;
 
 }
 
+/* QUADRO */
+
 .board {
     background: white;
     width: 300px;
+    min-width: 160px;
     padding: 15px;
     border-radius: 8px;
     box-shadow: 0 3px 10px rgba(0,0,0,0.1);
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    transition: 3s;
 }
+.board:hover{
+    transform: translate(-2px);
+}
+
+/* CABEÇALHO DO QUADRO */
 
 .board-header {
     display: flex;
@@ -55,29 +76,54 @@ body {
     align-items: center;
     margin-bottom: 10px;
 }
+.board-header h3{
+    font-size: 18px;
+}
 
 .board-actions button {
     background: none;
     border: none;
     cursor: pointer;
+    font-size: 17px;
+    transition: o.2s;
 }
+.board-actions button:hover{
+    transform: scale(1.2);
+}
+
+/* ÁREA DOS CARTÕES */
 
 .cards-container {
     display: flex;
     flex-direction: column;
-    gap: 10px;
+    gap: 12px;
+    flex-grow: 1;
 }
 
 .card {
     background: #fff;
     padding: 10px;
-    border-radius: 6px;
-    box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+    border-radius: 8px;
+    box-shadow: 0 2px 6px rgba(0,0,0,0.1);
     cursor: grab;
+    transition: 0.2s;
+}
+.card:hover{
+    transform: scale(1.02);
 }
 
 .card:active {
     cursor: grabbing;
+}
+
+.card h4{
+    font-size: 16px;
+    margin-bottom: 4px;
+}
+
+.card p{
+    font-size: 14px;
+    color: #555;
 }
 
 .card-actions {
@@ -86,6 +132,8 @@ body {
     gap: 10px;
     margin-top: 5px;
 }
+
+/* MODAL (FUNDO ESCURO) */
 
 .modal {
     position: fixed;
@@ -103,17 +151,20 @@ body {
     display: none;
 }
 
+/* MODAL (CONTEÚDO) */
+
 .modal-content {
     background: white;
     padding: 20px;
     width: 300px;
     border-radius: 8px;
+    box-shadow: 0px 4px 14px rgba(0, 0, 0, 0.2);
+    animation: fadeIn 0.25s ease;
 }
 
-.modal-actions {
-    margin-top: 10px;
-    display: flex;
-    justify-content: space-between;
+@keyframes fadeIn {
+    from {opacity: 0; transform: scale(0.9);}
+    to {opacity: 1; transform: scale(1);}
 }
 
 .modal-content input,
@@ -121,10 +172,52 @@ body {
     width: 100%;
     margin-top: 10px;
     padding: 8px;
+    border-radius: 6px;
+    border: 1px solid #ccc;
+}
+
+.modal-content textarea {
+    resize: none;
+    height: 80px;
+}
+
+.modal-actions {
+    margin-top: 15px;
+    display: flex;
+    justify-content: space-between;
+}
+
+.modal-actions button {
+    padding: 8px 14px;
+    border: none;
+    background: #4CAF50;
+    color: white;
+    border-radius: 6px;
+    cursor: pointer;
+    transition: 0.2s;
+}
+
+.modal-actions button:hover {
+    background: #45a049;
+}
+
+/* RESPONSIVIDADE */
+
+@media (max-width: 900px) {
+    .boards-container {
+        justify-content: center;
+    }
 }
 
 @media (max-width: 600px) {
-    .boards-container {
-        flex-direction: column;
+    .board {
+        width: 100%;
+        max-width: 350px;
     }
-}
+
+    .header {
+        flex-direction: column;
+        text-align: center;
+        gap: 10px;
+    }
+} 
