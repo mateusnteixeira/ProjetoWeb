@@ -221,3 +221,32 @@ body {
         gap: 10px;
     }
 } 
+
+.footer {
+    margin-top: 40px;
+    padding: 20px;
+    background: #f0f0f0;
+    color: #555;
+    font-size: 14px;
+    border-top: 1px solid #ddd;
+
+    display: flex;
+    justify-content: space-around;
+    align-items: flex-start;
+    flex-wrap: wrap; /* Permite quebrar linha no celular */
+    gap: 20px;
+}
+
+.footer-section h3 {
+    margin-bottom: 10px;
+}
+
+.footer-section ul {
+    list-style-type: none;
+    padding: 0;
+}
+
+.footer-section ul li {
+    margin: 5px 0;
+    opacity: 0.8;
+}

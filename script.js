@@ -1,4 +1,4 @@
-let boards = JSON.parse(localStorage.getItem("kanbanBoards")) || [];
+let boards = JSON.parse(localStorage.getItem("projetowebBoards")) || [];
 let editingBoardId = null;
 let editingCardInfo = null;
 
@@ -7,7 +7,7 @@ const modalBoard = document.getElementById("modal-board");
 const modalCard = document.getElementById("modal-card");
 
 function salvarLocalStorage() {
-    localStorage.setItem("kanbanBoards", JSON.stringify(boards));
+    localStorage.setItem("projetowebBoards", JSON.stringify(boards));
 }
 
 function abrirModalBoard(editId = null) {
@@ -194,7 +194,7 @@ document.getElementById("btn-exportar").onclick = () => {
 
     const a = document.createElement("a");
     a.href = URL.createObjectURL(blob);
-    a.download = "kanban.json";
+    a.download = "projetoweb.json";
     a.click();
 };
 
